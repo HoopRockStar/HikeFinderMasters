@@ -41,7 +41,7 @@ public class MainActivity extends Activity
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-	        	Intent myIntent = new Intent(MainActivity.this, Options.class);
+	        	Intent myIntent = new Intent(MainActivity.this, Select.class);
 	        	//myIntent.putExtra("key", value); //Optional parameters
 	        	MainActivity.this.startActivity(myIntent);
             }

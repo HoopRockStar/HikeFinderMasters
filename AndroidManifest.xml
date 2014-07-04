@@ -37,7 +37,8 @@
         <activity android:label="@string/app_name" android:name="com.example.hikefinder.Checklist"/>
         <activity android:label="@string/app_name" android:name="com.example.hikefinder.Completed"/>
         <activity android:label="@string/app_name" android:name="com.example.hikefinder.Map"/>
-   
+   		<activity android:label="@string/app_name" android:name="com.example.hikefinder.Features"/>
+   		<activity android:label="@string/app_name" android:name="com.example.hikefinder.Select"/>
     </application>
     
      

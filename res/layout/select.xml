@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tableLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:stretchColumns = "1"
+    android:background="@color/colorFawn" >
+    
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:text="Please select options for your hike:"
+        android:layout_span="2"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAsparagus"
+        android:padding="10dip" >
+    
+    <TextView
+        android:id="@+id/textViewLocationAccessibility"
+        android:text="Location and Accessibility"
+        android:clickable="true"
+        android:onClick="toggle_contents"
+        android:layout_span="2"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+
+        <TextView
+            android:id="@+id/textViewLocation"
+            android:text="Location" />
+        
+        <EditText
+        android:id="@+id/editTextLocation"
+        android:ems="10" ></EditText>         
+
+	</TableRow>
+	
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewFoodNearby"
+        android:text="Food Nearby" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFoodNearby"
+        android:text="Yes" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    
+    <TextView
+        android:id="@+id/textViewFreeParking"
+        android:text="Free Parking" />
+    
+    <CheckBox
+            android:id="@+id/checkBoxFreeParking"
+            android:text="Yes" />
+  
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewDogsAllowed"
+        android:text="Dogs Allowed" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDogsAllowed"
+        android:text="Yes" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAsparagus"
+        android:padding="10dip" >
+    
+    <TextView
+        android:id="@+id/textViewDistanceDifficulty"
+        android:text="Length and Difficulty"
+        android:clickable="true"
+        android:onClick="toggle_contents_difficulty"
+        android:layout_span="2"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    
+    <TextView
+        android:id="@+id/textViewDistance"
+        android:text="Distance" />
+    
+    <Spinner
+        android:id="@+id/spinnerDistance"
+        android:entries="@array/mileage_array" />
+    
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    
+    <TextView
+        android:id="@+id/textViewElevation"
+        android:text="Elevation" />
+    
+    <Spinner
+        android:id="@+id/spinnerElevation"
+        android:entries="@array/mileage_array" />
+    
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    
+    <TextView
+        android:id="@+id/textViewCalories"
+        android:text="Distance" />
+    
+    <Spinner
+        android:id="@+id/spinnerCalories"
+        android:entries="@array/mileage_array" />
+    
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewSteepHills"
+        android:text="No Steep Hills" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSteepHills"
+        android:text="Yes" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow12"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAsparagus"
+        android:padding="10dip" >
+    
+    <TextView
+        android:id="@+id/textViewFeatures"
+        android:text="Features"
+        android:clickable="true"
+        android:onClick="toggle_contents_features"
+        android:layout_span="2"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewLoop"
+        android:text="Loop" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLoop"
+        android:text="Yes" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewOceanView"
+        android:text="Ocean Views" />
+
+    <CheckBox
+        android:id="@+id/checkBoxOceanView"
+        android:text="Yes" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewWaterfall"
+        android:text="Waterfall" />
+
+    <CheckBox
+        android:id="@+id/checkBoxWaterfall"
+        android:text="Yes" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewRiverorLake"
+        android:text="River or Lake" />
+
+    <CheckBox
+        android:id="@+id/checkBoxRiverorLake"
+        android:text="Yes" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewHistoricalFeatures"
+        android:text="Interesting Historical Features" />
+
+    <CheckBox
+        android:id="@+id/checkBoxHistoricalFeatures"
+        android:text="Yes" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewGeographicalFeatures"
+        android:text="Interesting Geographical Features" />
+
+    <CheckBox
+        android:id="@+id/checkBoxGeographicalFeatures"
+        android:text="Yes" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewTallTrees"
+        android:text="Shade and Tall Trees" />
+
+    <CheckBox
+        android:id="@+id/checkBoxTallTrees"
+        android:text="Yes" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dip" >
+    <TextView
+        android:id="@+id/textViewOpenSpaces"
+        android:text="Fields and Open Spaces" />
+
+    <CheckBox
+        android:id="@+id/checkBoxOpenSpaces"
+        android:text="Yes" />
+
+    </TableRow>
+
+</TableLayout>
