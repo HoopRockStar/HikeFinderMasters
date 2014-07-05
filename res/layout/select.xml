@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorFawn"
+    android:layout_weight="1">
+    <LinearLayout
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical">
+
+<TableLayout 
     android:id="@+id/tableLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" 
@@ -15,7 +26,8 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:text="Please select options for your hike:"
+        android:textStyle="italic"
+        android:text="Click to expand and select options:"
         android:layout_span="2"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -39,7 +51,7 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow3"
+        android:id="@+id/tableRowLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
@@ -55,22 +67,22 @@
 	</TableRow>
 	
     <TableRow
-        android:id="@+id/tableRow4"
+        android:id="@+id/tableRowBathroom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
     <TextView
-        android:id="@+id/textViewFoodNearby"
-        android:text="Food Nearby" />
+        android:id="@+id/textViewBathroom"
+        android:text="Bathroom Available" />
 
     <CheckBox
-        android:id="@+id/checkBoxFoodNearby"
+        android:id="@+id/checkBoxBathroom"
         android:text="Yes" />
 
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow5"
+        android:id="@+id/tableRowfreeParking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
@@ -118,7 +130,7 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow8"
+        android:id="@+id/tableRowDistance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
@@ -134,7 +146,7 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow9"
+        android:id="@+id/tableRowElevation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
@@ -150,7 +162,7 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow10"
+        android:id="@+id/tableRowCalories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
@@ -198,7 +210,7 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow13"
+        android:id="@+id/tableRowLoop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
@@ -213,7 +225,7 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow14"
+        android:id="@+id/tableRowOceanView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
@@ -228,7 +240,7 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow15"
+        android:id="@+id/tableRowWaterfall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
@@ -243,13 +255,13 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow16"
+        android:id="@+id/tableRowRiverorLake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
     <TextView
         android:id="@+id/textViewRiverorLake"
-        android:text="River or Lake" />
+        android:text="Lake, River or Creek" />
 
     <CheckBox
         android:id="@+id/checkBoxRiverorLake"
@@ -258,7 +270,7 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow17"
+        android:id="@+id/tableRowHistoricalFeatures"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
@@ -273,22 +285,22 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow18"
+        android:id="@+id/tableRowGeologicalFeatures"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
     <TextView
-        android:id="@+id/textViewGeographicalFeatures"
-        android:text="Interesting Geographical Features" />
+        android:id="@+id/textViewGeologicalFeatures"
+        android:text="Interesting Geological Features" />
 
     <CheckBox
-        android:id="@+id/checkBoxGeographicalFeatures"
+        android:id="@+id/checkBoxGeologicalFeatures"
         android:text="Yes" />
 
     </TableRow>
     
     <TableRow
-        android:id="@+id/tableRow19"
+        android:id="@+id/tableRowTallTrees"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dip" >
@@ -309,7 +321,7 @@
         android:padding="10dip" >
     <TextView
         android:id="@+id/textViewOpenSpaces"
-        android:text="Fields and Open Spaces" />
+        android:text="Meadows and Open Spaces" />
 
     <CheckBox
         android:id="@+id/checkBoxOpenSpaces"
@@ -317,4 +329,19 @@
 
     </TableRow>
 
+    
 </TableLayout>
+
+<Button
+        android:id="@+id/button1"
+        android:layout_span="2"
+        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:background="@color/colorAsparagus"
+        android:text="@string/submit" />
+
+</LinearLayout>
+
+</ScrollView>

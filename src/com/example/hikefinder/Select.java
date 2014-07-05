@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +30,7 @@ public class Select extends Activity {
 	//textfields
 	TextView locationTextView;
 	TextView freeParkingTextView;
-	TextView foodNearbyTextView;
+	TextView bathroomTextView;
 	TextView dogsAllowedTextView;
 	
 	//textboxes
@@ -37,8 +38,14 @@ public class Select extends Activity {
 	
 	//check boxes
 	CheckBox freeParkingCheckBox;
-	CheckBox foodNearbyCheckBox;
+	CheckBox bathroomCheckBox;
 	CheckBox dogsAllowedCheckBox;
+	
+	//tablerows
+	TableRow locationRow;
+	TableRow freeParkingRow;
+	TableRow bathroomRow;
+	
 	
 	/*
 	 * Second Grouping
@@ -58,6 +65,11 @@ public class Select extends Activity {
 	//checkboxes
 	CheckBox steepHillsCheckBox;
 	
+	//tablerows
+	TableRow distanceRow;
+	TableRow elevationRow;
+	TableRow caloriesRow;
+	
 	/*
 	 * Third Grouping
 	 */
@@ -68,7 +80,7 @@ public class Select extends Activity {
 	TextView waterfallTextView;
 	TextView riverorLakeTextView;
 	TextView historicalFeaturesTextView;
-	TextView geographicalFeaturesTextView;
+	TextView geologicalFeaturesTextView;
 	TextView tallTreesTextView;
 	TextView openSpacesTextView;
 	
@@ -78,9 +90,25 @@ public class Select extends Activity {
 	CheckBox waterfallCheckBox;
 	CheckBox riverorLakeCheckBox;
 	CheckBox historicalFeaturesCheckBox;
-	CheckBox geographicalFeaturesCheckBox;
+	CheckBox geologicalFeaturesCheckBox;
 	CheckBox tallTreesCheckBox;
 	CheckBox openSpacesCheckBox;
+	
+	//tablerows
+	TableRow loopRow;
+	TableRow oceanViewRow;
+	TableRow waterfallRow;
+	TableRow riverorLakeRow;
+	TableRow historicalRow;
+	TableRow geologicalRow;
+	TableRow tallTreesRow;
+	
+	/*
+	 * Button
+	 */
+	
+	//buttons
+	Button submitButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +128,7 @@ public class Select extends Activity {
 		//textviews
 		locationTextView = (TextView) findViewById(R.id.textViewLocation);
 		freeParkingTextView = (TextView) findViewById(R.id.textViewFreeParking);
-		foodNearbyTextView = (TextView) findViewById(R.id.textViewFoodNearby);
+		bathroomTextView = (TextView) findViewById(R.id.textViewBathroom);
 		dogsAllowedTextView = (TextView) findViewById(R.id.textViewDogsAllowed);
 		
 		//textbox
@@ -108,20 +136,29 @@ public class Select extends Activity {
 		
 		// checkboxes
 		freeParkingCheckBox = (CheckBox) findViewById(R.id.checkBoxFreeParking);
-		foodNearbyCheckBox = (CheckBox) findViewById(R.id.checkBoxFoodNearby);
+		bathroomCheckBox = (CheckBox) findViewById(R.id.checkBoxBathroom);
 		dogsAllowedCheckBox = (CheckBox) findViewById(R.id.checkBoxDogsAllowed);
+		
+		// access three out of four tablerows
+		locationRow = (TableRow) findViewById(R.id.tableRowLocation);
+		freeParkingRow = (TableRow) findViewById(R.id.tableRowfreeParking);
+		bathroomRow = (TableRow) findViewById(R.id.tableRowBathroom);
 		
 		//make invisible to start
 		locationTextView.setVisibility(View.GONE);
 		freeParkingTextView.setVisibility(View.GONE);
-		foodNearbyTextView.setVisibility(View.GONE);
+		bathroomTextView.setVisibility(View.GONE);
 		dogsAllowedTextView.setVisibility(View.GONE);
 		
 		locationText.setVisibility(View.GONE);
 		
 		freeParkingCheckBox.setVisibility(View.GONE);
-		foodNearbyCheckBox.setVisibility(View.GONE);
+		bathroomCheckBox.setVisibility(View.GONE);
 		dogsAllowedCheckBox.setVisibility(View.GONE);
+		
+		locationRow.setVisibility(View.GONE);
+		freeParkingRow.setVisibility(View.GONE);
+		bathroomRow.setVisibility(View.GONE);
 		
 		/*
 		 * Second Grouping
@@ -141,6 +178,11 @@ public class Select extends Activity {
 		//checkbox
 		steepHillsCheckBox = (CheckBox) findViewById(R.id.checkBoxSteepHills);
 		
+		//tablerows
+		distanceRow = (TableRow) findViewById(R.id.tableRowDistance);
+		elevationRow = (TableRow) findViewById(R.id.tableRowElevation);
+		caloriesRow = (TableRow) findViewById(R.id.tableRowCalories);
+		
 		//Set Visibility to Invisible
 		
 		distanceTextView.setVisibility(View.GONE);
@@ -154,6 +196,10 @@ public class Select extends Activity {
 		elevationSpinner.setVisibility(View.GONE);
 		caloriesSpinner.setVisibility(View.GONE);
 		
+		distanceRow.setVisibility(View.GONE);
+		elevationRow.setVisibility(View.GONE);
+		caloriesRow.setVisibility(View.GONE);
+		
 		/*
 		 * Third Grouping
 		 */
@@ -164,8 +210,7 @@ public class Select extends Activity {
 		oceanViewTextView = (TextView) findViewById(R.id.textViewOceanView);
 		riverorLakeTextView = (TextView) findViewById(R.id.textViewRiverorLake);
 		historicalFeaturesTextView = (TextView) findViewById(R.id.textViewHistoricalFeatures);
-		geographicalFeaturesTextView = (TextView) findViewById(R.id.textViewGeographicalFeatures);
-		riverorLakeTextView = (TextView) findViewById(R.id.textViewRiverorLake);
+		geologicalFeaturesTextView = (TextView) findViewById(R.id.textViewGeologicalFeatures);
 		tallTreesTextView = (TextView) findViewById(R.id.textViewTallTrees);
 		openSpacesTextView = (TextView) findViewById(R.id.textViewOpenSpaces);
 		
@@ -173,20 +218,28 @@ public class Select extends Activity {
 		loopCheckBox = (CheckBox) findViewById(R.id.checkBoxLoop);
 		waterfallCheckBox = (CheckBox) findViewById(R.id.checkBoxWaterfall);
 		oceanViewCheckBox = (CheckBox) findViewById(R.id.checkBoxOceanView);
-		riverorLakeCheckBox = (CheckBox) findViewById(R.id.checkBoxRiverorLake);
 		historicalFeaturesCheckBox = (CheckBox) findViewById(R.id.checkBoxHistoricalFeatures);
-		geographicalFeaturesCheckBox = (CheckBox) findViewById(R.id.checkBoxGeographicalFeatures);
+		geologicalFeaturesCheckBox = (CheckBox) findViewById(R.id.checkBoxGeologicalFeatures);
 		riverorLakeCheckBox = (CheckBox) findViewById(R.id.checkBoxRiverorLake);
 		tallTreesCheckBox = (CheckBox) findViewById(R.id.checkBoxTallTrees);
 		openSpacesCheckBox = (CheckBox) findViewById(R.id.checkBoxOpenSpaces);
 		
+		//tablerows
+		loopRow = (TableRow) findViewById(R.id.tableRowLoop);
+		waterfallRow = (TableRow) findViewById(R.id.tableRowWaterfall);
+		oceanViewRow = (TableRow) findViewById(R.id.tableRowOceanView);
+		riverorLakeRow = (TableRow) findViewById(R.id.tableRowRiverorLake);
+		historicalRow = (TableRow) findViewById(R.id.tableRowHistoricalFeatures);
+		geologicalRow = (TableRow) findViewById(R.id.tableRowGeologicalFeatures);
+		tallTreesRow = (TableRow) findViewById(R.id.tableRowTallTrees);
+	
 		//set visibility to invisible
 		loopTextView.setVisibility(View.GONE);
 		waterfallTextView.setVisibility(View.GONE);
 		oceanViewTextView.setVisibility(View.GONE);
 		riverorLakeTextView.setVisibility(View.GONE);
 		historicalFeaturesTextView.setVisibility(View.GONE);
-		geographicalFeaturesTextView.setVisibility(View.GONE);
+		geologicalFeaturesTextView.setVisibility(View.GONE);
 		riverorLakeTextView.setVisibility(View.GONE);
 		tallTreesTextView.setVisibility(View.GONE);
 		openSpacesTextView.setVisibility(View.GONE);
@@ -196,10 +249,58 @@ public class Select extends Activity {
 		oceanViewCheckBox.setVisibility(View.GONE);
 		riverorLakeCheckBox.setVisibility(View.GONE);
 		historicalFeaturesCheckBox.setVisibility(View.GONE);
-		geographicalFeaturesCheckBox.setVisibility(View.GONE);
+		geologicalFeaturesCheckBox.setVisibility(View.GONE);
 		riverorLakeCheckBox.setVisibility(View.GONE);
 		tallTreesCheckBox.setVisibility(View.GONE);
 		openSpacesCheckBox.setVisibility(View.GONE);
+		
+		loopRow.setVisibility(View.GONE);
+		waterfallRow.setVisibility(View.GONE);
+		oceanViewRow.setVisibility(View.GONE);
+		riverorLakeRow.setVisibility(View.GONE);
+		historicalRow.setVisibility(View.GONE);
+		geologicalRow.setVisibility(View.GONE);
+		tallTreesRow.setVisibility(View.GONE);
+		
+		/*
+		 * Button
+		 */
+		
+		//buttons
+		submitButton = (Button) findViewById(R.id.button1);
+		
+		submitButton.setOnClickListener( new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	
+            	int oceanChecked = (oceanViewCheckBox.isChecked()) ? 1 : 0;
+            	int waterfallChecked = (waterfallCheckBox.isChecked()) ? 1 : 0;
+            	int geologicalChecked = (geologicalFeaturesCheckBox.isChecked()) ? 1 : 0;
+            	int historicalChecked = (historicalFeaturesCheckBox.isChecked()) ? 1 : 0;
+            	int dogChecked = (dogsAllowedCheckBox.isChecked()) ? 1 : 0;
+            	
+            	// create query hike
+            	Hike queryHike = new Hike(
+            			null, null,
+            			0, 0,
+            			oceanChecked,
+            			waterfallChecked,
+            			geologicalChecked,
+            			historicalChecked,
+            			dogChecked,
+            			null,null);
+            	
+            	List<Hike> hikeResults = db.queryHike(queryHike);
+            	
+            	System.out.println("Size of hike list returned by query: " + hikeResults.size());
+            	GlobalDataContainer.setQueryResults(hikeResults);
+            	
+		        Intent myIntent = new Intent(Select.this, Results.class);
+		        myIntent.putExtra("query_hike", new Hike(waterfallChecked, geologicalChecked, historicalChecked, dogChecked, oceanChecked)); //Optional parameters
+		        Select.this.startActivity(myIntent);
+            }
+        });
+	
 	}
 	
 	/**
@@ -217,7 +318,7 @@ public class Select extends Activity {
                   ? View.GONE
                   : View.VISIBLE );
 	      
-	      foodNearbyCheckBox.setVisibility( foodNearbyCheckBox.isShown()
+	      bathroomCheckBox.setVisibility( bathroomCheckBox.isShown()
                   ? View.GONE
                   : View.VISIBLE );
 	      
@@ -229,13 +330,26 @@ public class Select extends Activity {
                   ? View.GONE
                   : View.VISIBLE );
 	      
-	      foodNearbyTextView.setVisibility( foodNearbyTextView.isShown()
+	      bathroomTextView.setVisibility( bathroomTextView.isShown()
                   ? View.GONE
                   : View.VISIBLE );
 	      
 	      dogsAllowedTextView.setVisibility( dogsAllowedTextView.isShown()
                   ? View.GONE
                   : View.VISIBLE );
+	      
+	      locationRow.setVisibility( locationRow.isShown()
+                  ? View.GONE
+                  : View.VISIBLE );
+	      
+	      freeParkingRow.setVisibility( freeParkingRow.isShown()
+                  ? View.GONE
+                  : View.VISIBLE );
+	      
+	      bathroomRow.setVisibility( bathroomRow.isShown()
+                  ? View.GONE
+                  : View.VISIBLE );
+	      
 	}
 	
 	/**
@@ -274,6 +388,18 @@ public class Select extends Activity {
                   ? View.GONE
                   : View.VISIBLE );
 	      
+	      distanceRow.setVisibility( distanceRow.isShown()
+                  ? View.GONE
+                  : View.VISIBLE );
+	      
+	      elevationRow.setVisibility( elevationRow.isShown()
+                  ? View.GONE
+                  : View.VISIBLE );
+	      
+	      caloriesRow.setVisibility( caloriesRow.isShown()
+                  ? View.GONE
+                  : View.VISIBLE );
+	      
 	}
 	
 	public void toggle_contents_features(View v){
@@ -293,7 +419,7 @@ public class Select extends Activity {
 	    		  ? View.GONE
 	    		  : View.VISIBLE );
 	      
-	      geographicalFeaturesTextView.setVisibility( geographicalFeaturesTextView.isShown()
+	      geologicalFeaturesTextView.setVisibility( geologicalFeaturesTextView.isShown()
 	    		  ? View.GONE
 	    		  : View.VISIBLE );
 	      
@@ -325,7 +451,7 @@ public class Select extends Activity {
 				  ? View.GONE
 				  : View.VISIBLE );
 			
-		  geographicalFeaturesCheckBox.setVisibility( geographicalFeaturesCheckBox.isShown()
+		  geologicalFeaturesCheckBox.setVisibility( geologicalFeaturesCheckBox.isShown()
 				  ? View.GONE
 				  : View.VISIBLE );
 			
@@ -340,7 +466,34 @@ public class Select extends Activity {
 		  openSpacesCheckBox.setVisibility( openSpacesCheckBox.isShown()
 				  ? View.GONE
 				  : View.VISIBLE );
+		  
+		  loopRow.setVisibility( loopRow.isShown()
+				  ? View.GONE
+				  : View.VISIBLE );
+		  
+		  waterfallRow.setVisibility( waterfallRow.isShown()
+				  ? View.GONE
+				  : View.VISIBLE );
+		  
+		  oceanViewRow.setVisibility( oceanViewRow.isShown()
+				  ? View.GONE
+				  : View.VISIBLE );
+		  
+		  historicalRow.setVisibility( historicalRow.isShown()
+				  ? View.GONE
+				  : View.VISIBLE );
 	      
+		  geologicalRow.setVisibility( geologicalRow.isShown()
+				  ? View.GONE
+				  : View.VISIBLE );
+		  
+		  riverorLakeRow.setVisibility( riverorLakeRow.isShown()
+				  ? View.GONE
+				  : View.VISIBLE );
+		  
+		  tallTreesRow.setVisibility( tallTreesRow.isShown()
+				  ? View.GONE
+				  : View.VISIBLE );
 	}
 
 }
